@@ -7,11 +7,3 @@ module load cuda/11.2
 cd ALBEF
 
 python3 CXR_ReFusE_pipeline.py 
-
-cd ../ifcc
-
-conda activate m2trans
-
-python3 m2trans_nli_filter.py 
-
-conda deactivate m2trans
