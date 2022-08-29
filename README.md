@@ -1,6 +1,6 @@
 # CXR-ReDonE
 
-![](https://i.imgur.com/J5Zfdke.png)
+![](https://i.imgur.com/4N5GzUd.jpg)
 
 *Contrastive X-Ray Report Determination Employing Prior Reference Removal* (CXR-ReDonE) is a [TODO: quick blurb here]. We remove all references to priors from the training dataset ([TODO: give this a name and link to PhysioNet]) to prevent there being hallucinated references to non-existent priors in CXR-ReDonE's generated reports.
 
