@@ -116,10 +116,11 @@ Linked here are the ALBEF model checkpoints [with](https://www.dropbox.com/s/b4t
 
 ## Inference
 
-To run inference, perform the following commands:
+To run inference, run the following:
 
 ```bash
-sh inference.sh
+cd ALBEF
+python CXR_ReDonE_pipeline.py --albef_retrieval_ckpt <path-to-checkpoint>
 ```
 
 ## Evaluation
