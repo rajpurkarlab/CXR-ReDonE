@@ -6,4 +6,4 @@ module load cuda/11.2
 
 cd ALBEF
 
-python3 CXR_ReFusE_pipeline.py 
+python3 CXR_ReDonE_pipeline.py 
