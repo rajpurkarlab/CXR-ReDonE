@@ -19,7 +19,7 @@ from models.tokenization_bert import BertTokenizer
 from torchvision.transforms import Compose, Normalize, Resize, InterpolationMode
 import utils
 from PIL import Image
-from CXR_ReFusE_dataset import CXRTestDataset, CXRTestDataset_h5
+from CXR_ReDonE_dataset import CXRTestDataset, CXRTestDataset_h5
 
 
 
