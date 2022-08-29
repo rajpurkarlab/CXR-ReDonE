@@ -130,7 +130,7 @@ For evaluating the generated reports, we make use of CXR-Report-Metric:
 ### Setup
 
 ```bash
-cd CXR-Report-Metric
+cd ../CXR-Report-Metric
 conda create -n "cxr-report-metric" python=3.7.0 ipython
 conda activate cxr-report-metric
 pip install -r requirements.txt
