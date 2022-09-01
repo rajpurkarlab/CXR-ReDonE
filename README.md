@@ -2,16 +2,15 @@
 
 ![](https://i.imgur.com/4N5GzUd.jpg)
 
-*Contrastive X-Ray Report Determination Employing Prior Reference Removal* (CXR-ReDonE) is a [TODO: quick blurb here]. We remove all references to priors from the training dataset ([TODO: give this a name and link to PhysioNet]) to prevent there being hallucinated references to non-existent priors in CXR-ReDonE's generated reports.
+Current deep learning models trained to generate radiology reports from chest radiographs are capable of producing clinically accurate, clear, and actionable text that can advance patient care. However, such systems all succumb to the same problem: making hallucinated references to non-existent prior reports. Such hallucinations occur because these models are trained on datasets of real-world patient reports that inherently refer to priors. To this end, we propose two methods to directly remove references to priors in radiology reports: (1) a GPT-3-based few-shot approach to rewrite medical reports without references to priors; and (2) a BioBERT-based token classification approach to directly remove tokens referring to priors. We use the aforementioned approaches to modify MIMIC-CXR, a publicly available dataset of chest X-rays and their associated free-text radiology reports; we then retrain CXR-RePaiR, a radiology report generation system, on the adapted MIMIC-CXR dataset. We find that our re-trained model--which we call CXR-ReDonE--outperforms previous report generation methods on clinical metrics, and expect it to be broadly valuable in enabling current radiology report generation systems to be more directly integrated into clinical pipelines.
 
 ## Setup
 
-CXR-ReDonE makes use of multiple GitHub repos. To set up the complete CXR-ReDonE directory, perform the following commands inside `CXR-ReDonE/`:
+CXR-ReDonE makes use of multiple GitHub repos. To set up the complete CXR-ReDonE directory, clone the below repos, then perform the following commands inside `CXR-ReDonE/`:
 
 - [ifcc](https://github.com/ysmiura/ifcc)
 
 ```bash
-git clone https://github.com/ysmiura/ifcc
 cd ifcc
 sh resources/download.sh
 cd ..
@@ -22,7 +21,6 @@ rm -rf ifcc_CXR_ReDonE_code
 - [CheXbert](https://github.com/stanfordmlgroup/CheXbert)
 
 ```bash
-git clone https://github.com/stanfordmlgroup/CheXbert
 cd CheXbert
 mkdir models
 cd models
@@ -35,7 +33,6 @@ cd models
 - [CXR-Report-Metric](https://github.com/rajpurkarlab/CXR-Report-Metric)
 
 ```bash
-git clone https://github.com/rajpurkarlab/CXR-Report-Metric
 mv CXR-Report-Metric_CXR_ReDonE_code/* CXR-Report-Metric/
 rm -rf CXR-Report-Metric_CXR_ReDonE_code
 ```
