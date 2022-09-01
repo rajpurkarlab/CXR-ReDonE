@@ -161,12 +161,6 @@ The above steps to run CXR-ReDonE rely on two pretrained models:
 
 ### GILBERT: <u>G</u>enerating <u>I</u>n-text <u>L</u>abels of References to Priors with Bio<u>BERT</u>
 
-<!-- Remove token-level references to priors -->
-
-The BioBERT model for token tagging (marking each token as "REMOVE" or "KEEP," based on whether they comprise a reference to a prior) trained on the [annotated MIMIC-CXR train set]() is available [here](https://huggingface.co/rajpurkarlab/gilbert).
-
-> TODO: Upload [modified data](https://drive.google.com/file/d/1Pepjgl96_m3HfMUPpDoVeu32US4MXs6T/view?usp=sharing) to PhysioNet, and link this in the above paragraph.
-
 The model can be called programmatically as follows:
 
 ```python
@@ -196,8 +190,6 @@ modified_report = remove_priors(get_pipe(), "YOUR REPORT")
 
 ### FilBERT: <u>Fil</u>tering Sentence-Level References to Priors with Bio<u>BERT</u>
 
-The BioBERT model used to classify sentences as containing references to priors or not (marking each sentence as either label = 1 or label = 0, where 1 and 0 correspond to containing prior references and containing no references, respectively) trained on the [annotated MIMIC-CXR train set]() is available [here](https://huggingface.co/rajpurkarlab/filbert).
-
 The model can be called programmatically as follows:
 
 ```python
@@ -216,8 +208,6 @@ tokenizer, model = load_model()
 run_bert_classifier("SINGLE SENTENCE FROM A REPORT", tokenizer, model)
 ```
 
-## Retraining GILBERT and FilBERT
+## Retraining FilBERT and GILBERT
 
-To retrain GILBERT and FilBERT, see [here]().
-
-> TODO: Link these [train](https://colab.research.google.com/drive/12sM1baPnoTAEYkumzglM-UkIqgbZzZ3q?usp=sharing) [scripts](https://colab.research.google.com/drive/1UsFRNyldb_BbPfpk_CQR2Xs3o1r2V2G-), once they are uploaded to GitHub.
+Linked here are the scripts for training [FilBERT]() and [GILBERT]().
