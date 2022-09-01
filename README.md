@@ -159,6 +159,26 @@ python3 compute_avg_score.py --fpath <input path>
 
 The above steps to run CXR-ReDonE rely on two pretrained models:
 
+### FilBERT: <u>Fil</u>tering Sentence-Level References to Priors with Bio<u>BERT</u>
+
+The model can be called programmatically as follows:
+
+```python
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+def load_model(model_name="rajpurkarlab/filbert"):
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model = AutoModelForSequenceClassification.from_pretrained(model_name)
+    return tokenizer, model
+
+def run_bert_classifier(sentence, tokenizer, model):
+    pipe = pipeline("sentiment-analysis", model=model.to("cpu"), tokenizer=tokenizer)
+    return int(pipe(sentence)[0]['label'][-1])
+
+tokenizer, model = load_model()
+run_bert_classifier("SINGLE SENTENCE FROM A REPORT", tokenizer, model)
+```
+
 ### GILBERT: <u>G</u>enerating <u>I</u>n-text <u>L</u>abels of References to Priors with Bio<u>BERT</u>
 
 The model can be called programmatically as follows:
@@ -188,26 +208,6 @@ def remove_priors(pipe, report):
 modified_report = remove_priors(get_pipe(), "YOUR REPORT")
 ```
 
-### FilBERT: <u>Fil</u>tering Sentence-Level References to Priors with Bio<u>BERT</u>
-
-The model can be called programmatically as follows:
-
-```python
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
-
-def load_model(model_name="rajpurkarlab/filbert"):
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForSequenceClassification.from_pretrained(model_name)
-    return tokenizer, model
-
-def run_bert_classifier(sentence, tokenizer, model):
-    pipe = pipeline("sentiment-analysis", model=model.to("cpu"), tokenizer=tokenizer)
-    return int(pipe(sentence)[0]['label'][-1])
-
-tokenizer, model = load_model()
-run_bert_classifier("SINGLE SENTENCE FROM A REPORT", tokenizer, model)
-```
-
 ## Retraining FilBERT and GILBERT
 
-Linked here are the scripts for training [FilBERT]() and [GILBERT]().
+Linked here are the scripts for training [FilBERT](https://github.com/rajpurkarlab/CXR-ReDonE/blob/main/FilBERT.ipynb) and [GILBERT](https://github.com/rajpurkarlab/CXR-ReDonE/blob/main/GILBERT.ipynb).
