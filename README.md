@@ -32,10 +32,6 @@ cd models
 
 - [CXR-RePaiR](https://github.com/rajpurkarlab/CXR-RePaiR)
 
-```bash
-git clone https://github.com/rajpurkarlab/CXR-RePaiR
-```
-
 - [CXR-Report-Metric](https://github.com/rajpurkarlab/CXR-Report-Metric)
 
 ```bash
