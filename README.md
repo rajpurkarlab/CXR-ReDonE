@@ -116,6 +116,13 @@ cd ALBEF
 python CXR_ReDonE_pipeline.py --albef_retrieval_ckpt <path-to-checkpoint>
 ```
 
+For sentence-level report retrieval (where k = # of sentences in outputted report), run:
+
+```bash
+cd ALBEF
+python CXR_ReDonE_pipeline.py --impressions_path ../data/mimic_train_sentence_impressions.csv --albef_retrieval_ckpt <path-to-checkpoint> --albef_retrieval_top_k <k value>
+```
+
 ## Evaluation
 
 For evaluating the generated reports, we make use of CXR-Report-Metric:
