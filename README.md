@@ -214,7 +214,3 @@ def remove_priors(pipe, report):
 
 modified_report = remove_priors(get_pipe(), "YOUR REPORT")
 ```
-
-## Retraining FilBERT and GILBERT
-
-Linked here are the scripts for training [FilBERT](https://github.com/rajpurkarlab/CXR-ReDonE/blob/main/FilBERT.ipynb) and [GILBERT](https://github.com/rajpurkarlab/CXR-ReDonE/blob/main/GILBERT.ipynb).
