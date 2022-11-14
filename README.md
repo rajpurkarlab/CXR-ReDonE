@@ -94,7 +94,7 @@ python remove_prior_refs.py
 
 <br>
 
-To skip these steps and instead obtain the final data, navigate to the `MIMIC-PRO` directory and follow the steps there.
+To skip these steps and instead obtain the final data, navigate to the `CXR-PRO` directory and follow the steps there.
 
 ## Training
 
